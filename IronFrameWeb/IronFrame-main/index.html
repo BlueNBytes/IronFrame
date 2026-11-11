@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRONFRAME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap">
+            <nav>
+                <div class="logo">IRON<span>FRAME</span></div>
+                <div class="navlinks">
+                    <a href="mechselect.html">Build System</a>
+                    <a href="mechselect.html">Unit Roster</a>
+                    <a href="Bhome.html">Battle</a>
+                </div>
+                <a class="nav-cta" href="mechselect.html">Enter Hangar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="eyebrow">Mobile Suit Design Sandbox</div>
+                    <h1>Build your own<br><em>mobile suit</em>,<br>frame up.</h1>
+                    <p class="lede">IRONFRAME is a part-by-part mecha builder. Choose a frame, swap thrusters and armor
+                        plating, load out your weapons bay, then drop your unit straight into skirmish mode.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="window.location.href='mechselect.html'">Start a
+                            Build</button>
+                        <button class="btn btn-ghost" onclick="window.location.href='mechselect.html'">Browse
+                            Roster</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div><b>18+</b><span>Swappable Parts</span></div>
+                        <div><b>5</b><span>Frame Chassis</span></div>
+                        <div><b>1v1 / 3v3</b><span>Skirmish Modes</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-schema hud-frame">
+                    <!-- 2. Your Mech Asset Script -->
+                    <script src="assets/suits/bastionAssets/bastion.mech.js"></script>
+
+                    <!-- 3. Your Scene Setup Script -->
+                    <script src="viewer.js"></script>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pipeline Section -->
+        <section id="pipeline">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow">How it works</div>
+                    <h2>Four stations, one hangar</h2>
+                    <p>Every build moves through a streamlined modular assembly process. Pull a unit back to any station
+                        and rework it at will.</p>
+                </div>
+                <div class="pipeline">
+                    <div class="pipe-step">
+                        <div class="idx">STATION 01</div>
+                        <h3>Frame Select</h3>
+                        <p>Pick a chassis by role—assault, recon, or heavy support—and set base stats.</p>
+                    </div>
+                    <div class="pipe-step">
+                        <div class="idx">STATION 02</div>
+                        <h3>Armor & Plating</h3>
+                        <p>Layer plating across hit zones to balance speed against effective HP.</p>
+                    </div>
+                    <div class="pipe-step">
+                        <div class="idx">STATION 03</div>
+                        <h3>Weapons Bay</h3>
+                        <p>Load up hardpoints with melee, ranged, or specialized support gear.</p>
+                    </div>
+                    <div class="pipe-step">
+                        <div class="idx">STATION 04</div>
+                        <h3>Trial Run</h3>
+                        <p>Test your prototype against a sparring AI before deploying.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roster Section -->
+        <section id="roster">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow">Starter chassis</div>
+                    <h2>Five frames to build from</h2>
+                    <p>Every new pilot starts with one of these foundational chassis.</p>
+                </div>
+                <div class="roster">
+                    <!-- Card 1 -->
+                    <div class="unit-card hud-frame">
+                        <div class="unit-visual">
+                            <svg viewBox="0 0 100 120" fill="none" stroke="#4a90c4" stroke-width="1.4">
+                                <rect x="35" y="8" width="30" height="26" rx="5" />
+                                <rect x="30" y="36" width="40" height="34" rx="4" />
+                                <rect x="14" y="40" width="14" height="28" rx="3" />
+                                <rect x="72" y="40" width="14" height="28" rx="3" />
+                                <rect x="36" y="72" width="12" height="34" rx="3" />
+                                <rect x="52" y="72" width="12" height="34" rx="3" />
+                            </svg>
+                        </div>
+                        <div class="unit-name">RX-68 VANGUARD</div>
+                        <div class="unit-class">Heavy Defender</div>
+                        <div class="unit-specs">
+                            <div class="spec-row"><span>Shields</span><b>85</b></div>
+                            <div class="spec-bar"><i style="width:85%"></i></div>
+                            <div class="spec-row"><span>Health</span><b>50</b></div>
+                            <div class="spec-bar"><i style="width:50%"></i></div>
+                            <div class="spec-row"><span>Mobility</span><b>20</b></div>
+                            <div class="spec-bar"><i style="width:20%"></i></div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="unit-card hud-frame">
+                        <div class="unit-visual">
+                            <svg viewBox="0 0 100 120" fill="none" stroke="#4a90c4" stroke-width="1.4">
+                                <rect x="33" y="6" width="34" height="24" rx="5" />
+                                <rect x="24" y="32" width="52" height="40" rx="4" />
+                                <rect x="6" y="36" width="16" height="32" rx="3" />
+                                <rect x="78" y="36" width="16" height="32" rx="3" />
+                                <rect x="32" y="74" width="14" height="36" rx="3" />
+                                <rect x="54" y="74" width="14" height="36" rx="3" />
+                            </svg>
+                        </div>
+                        <div class="unit-name">ALYSNES STRIKER</div>
+                        <div class="unit-class">High-Speed Scout</div>
+                        <div class="unit-specs">
+                            <div class="spec-row"><span>Shields</span><b>10</b></div>
+                            <div class="spec-bar"><i style="width:10%"></i></div>
+                            <div class="spec-row"><span>Health</span><b>30</b></div>
+                            <div class="spec-bar"><i style="width:30%"></i></div>
+                            <div class="spec-row"><span>Mobility</span><b>30</b></div>
+                            <div class="spec-bar"><i style="width:30%"></i></div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="unit-card hud-frame">
+                        <div class="unit-visual">
+                            <svg viewBox="0 0 100 120" fill="none" stroke="#4a90c4" stroke-width="1.4">
+                                <rect x="37" y="10" width="26" height="22" rx="5" />
+                                <rect x="33" y="34" width="34" height="30" rx="4" />
+                                <rect x="18" y="37" width="12" height="24" rx="3" />
+                                <rect x="70" y="37" width="12" height="24" rx="3" />
+                                <rect x="38" y="66" width="10" height="38" rx="3" />
+                                <rect x="52" y="66" width="10" height="38" rx="3" />
+                            </svg>
+                        </div>
+                        <div class="unit-name">NOVAX OVERDRIVE</div>
+                        <div class="unit-class">Assault Frame</div>
+                        <div class="unit-specs">
+                            <div class="spec-row"><span>Shields</span><b>95</b></div>
+                            <div class="spec-bar"><i style="width:95%"></i></div>
+                            <div class="spec-row"><span>Health</span><b>20</b></div>
+                            <div class="spec-bar"><i style="width:20%"></i></div>
+                            <div class="spec-row"><span>Mobility</span><b>40</b></div>
+                            <div class="spec-bar"><i style="width:40%"></i></div>
+                        </div>
+                    </div>
+                    <div class="unit-card hud-frame">
+                        <div class="unit-visual">
+                            <svg viewBox="0 0 100 120" fill="none" stroke="#7dd3fc" stroke-width="1.4">
+                                <rect x="34" y="8" width="32" height="25" rx="5" />
+                                <rect x="26" y="35" width="48" height="38" rx="4" />
+                                <rect x="8" y="40" width="16" height="30" rx="3" />
+                                <rect x="76" y="40" width="16" height="30" rx="3" />
+                                <rect x="34" y="75" width="13" height="34" rx="3" />
+                                <rect x="53" y="75" width="13" height="34" rx="3" />
+                            </svg>
+                        </div>
+                        <div class="unit-name">FROSTFRAME</div>
+                        <div class="unit-class">Medium Attacker</div>
+                        <div class="unit-specs">
+                            <div class="spec-row"><span>Shields</span><b>40</b></div>
+                            <div class="spec-bar"><i style="width:40%"></i></div>
+                            <div class="spec-row"><span>Health</span><b>40</b></div>
+                            <div class="spec-bar"><i style="width:40%"></i></div>
+                            <div class="spec-row"><span>Mobility</span><b>40</b></div>
+                            <div class="spec-bar"><i style="width:80%"></i></div>
+                        </div>
+                    </div>
+                    <div class="unit-card hud-frame">
+                        <div class="unit-visual">
+                            <svg viewBox="0 0 100 120" fill="none" stroke="#a78bfa" stroke-width="1.4">
+                                <rect x="34" y="8" width="32" height="25" rx="5" />
+                                <rect x="26" y="35" width="48" height="38" rx="4" />
+                                <rect x="8" y="40" width="16" height="30" rx="3" />
+                                <rect x="76" y="40" width="16" height="30" rx="3" />
+                                <rect x="34" y="75" width="13" height="34" rx="3" />
+                                <rect x="53" y="75" width="13" height="34" rx="3" />
+                            </svg>
+                        </div>
+                        <div class="unit-name">BLACKBIRD</div>
+                        <div class="unit-class">Light Attacker</div>
+                        <div class="unit-specs">
+                            <div class="spec-row"><span>Shields</span><b>35</b></div>
+                            <div class="spec-bar"><i style="width:35%"></i></div>
+                            <div class="spec-row"><span>Health</span><b>45</b></div>
+                            <div class="spec-bar"><i style="width:45%"></i></div>
+                            <div class="spec-row"><span>Mobility</span><b>40</b></div>
+                            <div class="spec-bar"><i style="width:80%"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customization Section -->
+        <section id="customize">
+            <div class="wrap customize">
+                <div>
+                    <div class="eyebrow">Live loadout</div>
+                    <h2>Every part swap<br>changes the sheet</h2>
+                    <p>Nothing is cosmetic-only. Swap plates and watch your stat metrics shift instantly in real time.
+                    </p>
+                </div>
+                <div class="swap-panel hud-frame">
+                    <div class="swap-row"><span class="label">Head Unit</span><span class="value">Wide-Band
+                            Sensor</span><span class="chip">Equipped</span></div>
+                    <div class="swap-row"><span class="label">Shoulder Plating</span><span class="value">Reinforced
+                            Composite</span><span class="chip warn">-4 Speed</span></div>
+                    <div class="swap-row"><span class="label">Backpack</span><span class="value">Twin Thruster
+                            Pack</span><span class="chip">Equipped</span></div>
+                    <div class="swap-row"><span class="label">Right Hardpoint</span><span class="value">Beam
+                            Saber</span><span class="chip">Equipped</span></div>
+                    <div class="swap-row"><span class="label">Left Hardpoint</span><span class="value">Mid-Range
+                            Rifle</span><span class="chip">Equipped</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Band -->
+        <section class="cta-band" id="cta">
+            <div class="wrap">
+                <div class="eyebrow" style="justify-content:center;">Pilot registration open</div>
+                <h2>Your frame is waiting in the hangar.</h2>
+                <p>No account needed to prototype your build. Register a pilot ID when you're ready to queue.</p>
+                <div class="hero-actions">
+                    <a href="mechselect.html" class="btn btn-primary">Start a Build</a>
+                    <a href="watch.html" class="btn btn-ghost">Watch a Skirmish</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap foot-grid">
+            <div class="logo" style="font-size:16px;">IRON<span>FRAME</span></div>
+            <div class="foot-links">
+                <a href="#pipeline">Build System</a>
+                <a href="mechselect.html">Roster</a>
+                <a href="#customize">Customization</a>
+            </div>
+            <div class="foot-note">Made by Bluebytes group</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

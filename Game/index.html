@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js - Octree Collisions Refactored</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loader"></div>
+            <div class="loading-text">Loading Game...</div>
+            <div class="loading-progress">0%</div>
+        </div>
+    </div>
+    <div id="ui-wrapper">
+        <div id="stats-container">
+            <div class="panel-tab">PERFORMANCE</div>
+        </div>
+        <div id="hud-top">
+            <div id="suit-hud" class="hud-panel">
+                <div class="hud-header">
+                    <span id="hud-suit-name">RX-68 Vanguard</span>
+                    <a href="Select.html" class="hud-switch-link" title="Change Mobility Suit">CHANGE SUIT</a>
+                </div>
+                <div class="hud-bars">
+                    <div class="hud-bar-row">
+                        <span class="hud-bar-label">SHD</span>
+                        <div class="hud-bar-track"><div id="hud-shield-bar" class="hud-bar-fill shields" style="width: 100%;"></div></div>
+                        <span id="hud-shield-val" class="hud-val">85</span>
+                    </div>
+                    <div class="hud-bar-row">
+                        <span class="hud-bar-label">HP</span>
+                        <div class="hud-bar-track"><div id="hud-health-bar" class="hud-bar-fill health" style="width: 100%;"></div></div>
+                        <span id="hud-health-val" class="hud-val">50</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="multiplayer-panel" class="hud-panel" aria-label="Multiplayer">
+            <div class="multiplayer-heading">
+                <strong>ONLINE CO-OP</strong>
+                <span id="multiplayer-status" class="multiplayer-status">Offline</span>
+            </div>
+            <label class="multiplayer-label" for="multiplayer-name">Callsign</label>
+            <input id="multiplayer-name" class="multiplayer-input" maxlength="20" autocomplete="nickname" value="Pilot">
+            <label class="multiplayer-label" for="multiplayer-room">Room code</label>
+            <input id="multiplayer-room" class="multiplayer-input" maxlength="8" autocomplete="off" placeholder="Enter a code to join">
+            <div class="multiplayer-actions">
+                <button id="multiplayer-create" class="multiplayer-button primary">Create room</button>
+                <button id="multiplayer-join" class="multiplayer-button">Join room</button>
+            </div>
+            <div id="multiplayer-room-info" class="multiplayer-room-info" hidden>
+                Share code <strong id="multiplayer-room-code"></strong>
+                <span id="multiplayer-player-count"></span>
+            </div>
+            <button id="multiplayer-leave" class="multiplayer-button leave" hidden>Leave room</button>
+            <p id="multiplayer-message" class="multiplayer-message" aria-live="polite">Create a room or join with a code.</p>
+        </section>
+
+        <div id="hud-bottom">
+            <div id="weapon-hud" class="hud-panel">
+                <div class="panel-tab">WEAPONS</div>
+                <div id="weapon-cards" class="weapon-cards"></div>
+            </div>
+        </div>
+
+        <div id="info">
+            <div class="panel-tab">CONTROLS</div>
+            <strong>MOUSE:</strong> Aim &amp; Fire | <strong>WASD:</strong> Move | <strong>SHIFT:</strong> Sprint | <strong>SPACE:</strong> Jump<br/>
+            <strong>1 / 2 / 3 or T:</strong> Switch Weapon | <strong>R:</strong> Reload | <strong>F:</strong> Quick Melee<br/>
+            <strong>V:</strong> First/Third Person | <strong>G:</strong> Toggle HUD &amp; GUI
+        </div>
+
+        <div id="hud-coords" class="hud-panel">
+            <div class="panel-tab">COORDINATES</div>
+            <span class="hud-coords-label">POS</span>
+            <span id="hud-coord-x" class="hud-coord">X: 0.00</span>
+            <span id="hud-coord-y" class="hud-coord">Y: 0.00</span>
+            <span id="hud-coord-z" class="hud-coord">Z: 0.00</span>
+        </div>
+    </div>
+    <div id="container"></div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
